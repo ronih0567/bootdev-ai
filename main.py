@@ -16,7 +16,7 @@ def main():
     messages = [types.Content(role="user", parts=[types.Part(text=args.user_prompt)])]
     response = client.models.generate_content(
         model="gemini-2.5-flash", contents=messages
-)
+    )
     if response.usage_metadata == None:
         raise RuntimeError("Usage metadata is None")
     print(f"Prompt tokens: {response.usage_metadata.prompt_token_count}")
