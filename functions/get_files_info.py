@@ -22,6 +22,7 @@ def get_files_info(working_directory, directory="."):
             size = os.path.getsize(full_path)
             line = f"- {name}: file_size={size} bytes, is_dir={is_dir}"
             lines.append(line)
+        print(f"Generated lines: {lines}")  # Debugging line
         result = "\n".join(lines)
         return result
     except Exception as e:
